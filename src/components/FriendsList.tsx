@@ -8,10 +8,12 @@ interface IFriendsListProps {
     name: string
     followers: number
   }>
+  unFollow: () => void
 }
 
 export function FriendsList({
-  friends
+  friends,
+  unFollow
 }: IFriendsListProps) {
   const totalFollowers = useMemo(() => {
     return friends.reduce((followers, friend) => {
@@ -30,6 +32,7 @@ export function FriendsList({
           <Friend
             key={friend.id}
             friend={friend}
+            unFollow={unFollow}
           />
         ))
       }
