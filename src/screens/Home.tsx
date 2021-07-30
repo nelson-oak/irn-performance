@@ -14,6 +14,13 @@ interface IFriend {
   id: number
   name: string
   followers: number
+  onlineAt: string
+}
+
+interface IFriendData {
+  id: number
+  name: string
+  followers: number
 }
 
 export function Home() {
@@ -23,7 +30,17 @@ export function Home() {
   async function handleSearch() {
     const response = await fetch(`http://192.168.0.107:3333/friends?q=${name}`)
     const data = await response.json()
-    setFriends(data)
+
+    const formattedData = data.map((friend: IFriendData) => {
+      return {
+        id: friend.id,
+        name: friend.name,
+        followers: friend.followers,
+        onlineAt: `${new Date().getHours()}:${new Date().getMinutes()}`
+      }
+    })
+
+    setFriends(formattedData)
   }
 
   const handleUnFollow = useCallback(() => {

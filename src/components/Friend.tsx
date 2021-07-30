@@ -6,6 +6,7 @@ interface IFriendProps {
     id: number
     name: string
     followers: number
+    onlineAt: string
   }
   unFollow: () => void
 }
@@ -23,6 +24,14 @@ function FriendComponent({
       <TouchableOpacity onPress={unFollow}>
         <Text>Deixar de seguir</Text>
       </TouchableOpacity>
+
+      {/* Não fazer */}
+      {/* <Text>
+        Online em { new Date().getHours() }: { new Date().getMinutes() }
+      </Text> */}
+      <Text>
+        Online em { friend.onlineAt }
+      </Text>
     </View>
   )
 }
