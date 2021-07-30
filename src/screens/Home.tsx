@@ -62,12 +62,10 @@ export function Home() {
         onPress={handleSearch}
       />
 
-      <ScrollView style={styles.list}>
-        <FriendsList
-          friends={friends}
-          unFollow={handleUnFollow}
-        />
-      </ScrollView>
+      <FriendsList
+        friends={friends}
+        unFollow={handleUnFollow}
+      />
     </View>
   )
 }
@@ -87,7 +85,4 @@ const styles = StyleSheet.create({
     padding: 7,
     marginVertical: 10
   },
-  list: {
-    marginTop: 20
-  }
 })

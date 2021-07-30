@@ -25,10 +25,6 @@ function FriendComponent({
         <Text>Deixar de seguir</Text>
       </TouchableOpacity>
 
-      {/* Não fazer */}
-      {/* <Text>
-        Online em { new Date().getHours() }: { new Date().getMinutes() }
-      </Text> */}
       <Text>
         Online em { friend.onlineAt }
       </Text>
