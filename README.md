@@ -6,6 +6,8 @@ Exemplo de aplicação de performance no react native
 
 | Número | Funcionalidade |
 | - | - |
+| 1 | Listar amigos |
+| 2 | Filtrar amigos |
 
 ## Recursos
 
