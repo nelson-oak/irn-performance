@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Text } from 'react-native'
 
 interface IFriendProps {
   friend: {
+    id: number
     name: string
     followers: number
   }
 }
 
-export function Friend({
+function FriendComponent({
   friend
 }: IFriendProps) {
   return (
@@ -17,3 +18,7 @@ export function Friend({
     </Text>
   )
 }
+
+export const Friend = memo(FriendComponent, (prevProps, nextProps) => {
+  return Object.is(prevProps.friend, nextProps.friend)
+})
