@@ -7,6 +7,7 @@ interface IFriendsListProps {
     id: number
     name: string
     followers: number
+    onlineAt: string
   }>
   unFollow: () => void
 }
